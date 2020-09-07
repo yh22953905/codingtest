@@ -1,14 +1,16 @@
 package me.kimyounghan.codingtest;
 
+import me.kimyounghan.codingtest.programmers.hash.APlayerWhoCouldNotFinish;
 import me.kimyounghan.codingtest.programmers.sort.LargestNumber;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        LargestNumber largestNumber = new LargestNumber();
+        APlayerWhoCouldNotFinish aPlayerWhoCouldNotFinish = new APlayerWhoCouldNotFinish();
 
-        String answer = largestNumber.solution(new int[]{6, 10, 2});
+        String answer = aPlayerWhoCouldNotFinish
+                .solution(new String[]{"mislav", "stanko", "mislav", "ana"}, new String[]{"stanko", "ana", "mislav"});
 
         System.out.println("answer : " + answer);
 
