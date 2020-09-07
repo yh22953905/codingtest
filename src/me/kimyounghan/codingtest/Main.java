@@ -2,15 +2,15 @@ package me.kimyounghan.codingtest;
 
 import me.kimyounghan.codingtest.programmers.hash.APlayerWhoCouldNotFinish;
 import me.kimyounghan.codingtest.programmers.sort.LargestNumber;
+import me.kimyounghan.codingtest.programmers.stackandqueue.Top;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        APlayerWhoCouldNotFinish aPlayerWhoCouldNotFinish = new APlayerWhoCouldNotFinish();
+        Top top = new Top();
 
-        String answer = aPlayerWhoCouldNotFinish
-                .solution(new String[]{"mislav", "stanko", "mislav", "ana"}, new String[]{"stanko", "ana", "mislav"});
+        int[] answer = top.solution(new int[]{1,5,3,6,7,6,5});
 
         System.out.println("answer : " + answer);
 
