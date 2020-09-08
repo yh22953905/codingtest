@@ -1,5 +1,6 @@
 package me.kimyounghan.codingtest;
 
+import me.kimyounghan.codingtest.programmers.DynamicProgramming.ExpressedByN;
 import me.kimyounghan.codingtest.programmers.dfsbfs.TargetNumber;
 import me.kimyounghan.codingtest.programmers.hash.APlayerWhoCouldNotFinish;
 import me.kimyounghan.codingtest.programmers.sort.LargestNumber;
@@ -9,9 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TargetNumber targetNumber = new TargetNumber();
+        ExpressedByN expressedByN = new ExpressedByN();
 
-        int answer = targetNumber.solution(new int[]{1, 1, 1, 1, 1}, 3);
+        int answer = expressedByN.solution(5, 12);
 
         System.out.println("answer : " + answer);
 

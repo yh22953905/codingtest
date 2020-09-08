@@ -22,7 +22,7 @@ public class TargetNumber {
      * 입출력 예
      * numbers	target	return
      * [1, 1, 1, 1, 1]	3	5
-     * 
+     *
      * 입출력 예 설명
      * 문제에 나온 예와 같습니다.
      *
@@ -32,29 +32,21 @@ public class TargetNumber {
      * @return
      */
 
-
     int answer = 0;
 
     public int solution(int[] numbers, int target) {
-        dfs(numbers, target, 0);
+        int answer = 0;
+        answer = dfs(numbers, 0, 0, target);
         return answer;
     }
 
-    public void dfs(int[] numbers, int target, int node) {
-        if(node == numbers.length) {
-            int sum = 0;
-            for(int num : numbers) {
-                sum += num;
+    int dfs(int[] numbers, int n, int sum, int target) {
+        if(n == numbers.length) {
+            if(sum == target) {
+                return 1;
             }
-            if (sum == target) {
-                answer++;
-            }
-        } else {
-            numbers[node] *= 1;
-            dfs(numbers, target, node+1);
-
-            numbers[node] *= -1;
-            dfs(numbers, target, node+1);
+            return 0;
         }
+        return dfs(numbers, n + 1, sum + numbers[n], target) + dfs(numbers, n + 1, sum - numbers[n], target);
     }
 }
