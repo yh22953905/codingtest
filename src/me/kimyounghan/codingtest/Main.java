@@ -1,15 +1,15 @@
 package me.kimyounghan.codingtest;
 
 
-import me.kimyounghan.codingtest.codility.kakao.Problem1;
+import me.kimyounghan.codingtest.codility.kakao.Problem2;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Problem1 problem1 = new Problem1();
+        Problem2 problem2 = new Problem2();
 
-        int answer = problem1.solution("aabbaccc");
+        String answer = problem2.solution("(()())()");
 
         System.out.println("answer : " + answer);
 
