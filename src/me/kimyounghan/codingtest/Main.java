@@ -1,15 +1,15 @@
 package me.kimyounghan.codingtest;
 
 
-import me.kimyounghan.codingtest.programmers.binarysearch.Budget;
+import me.kimyounghan.codingtest.codility.kakao.Problem1;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Budget budget = new Budget();
+        Problem1 problem1 = new Problem1();
 
-        int answer = budget.solution(new int[]{120, 110, 140, 150},485);
+        int answer = problem1.solution("aabbaccc");
 
         System.out.println("answer : " + answer);
 
