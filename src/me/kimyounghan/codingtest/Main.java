@@ -1,15 +1,16 @@
 package me.kimyounghan.codingtest;
 
 
-import me.kimyounghan.codingtest.codility.kakao.Problem2;
+import me.kimyounghan.codingtest.codility.kakao.Problem4;
+import me.kimyounghan.codingtest.programmers.hash.PhoneBook;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Problem2 problem2 = new Problem2();
+        PhoneBook phoneBook = new PhoneBook();
 
-        String answer = problem2.solution("(()())()");
+        boolean answer = phoneBook.solution(new String[]{"12","123","1235","567","88"});
 
         System.out.println("answer : " + answer);
 

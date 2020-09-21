@@ -23,7 +23,7 @@ public class Budget {
      *
      * ------------------------------------------------------------------------------------
      *
-     * @param budgets, budget
+     * @param budgets, M
      * @return
      */
 

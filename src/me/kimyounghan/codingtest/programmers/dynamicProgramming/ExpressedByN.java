@@ -1,4 +1,4 @@
-package me.kimyounghan.codingtest.programmers.DynamicProgramming;
+package me.kimyounghan.codingtest.programmers.dynamicProgramming;
 
 public class ExpressedByN {
 
