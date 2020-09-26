@@ -1,15 +1,16 @@
 package me.kimyounghan.codingtest;
 
 
-import me.kimyounghan.codingtest.programmers.stackandqueue.Printer;
+import me.kimyounghan.codingtest.programmers.hash.Camouflage;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Printer developFuntion = new Printer();
+        Camouflage developFuntion = new Camouflage();
 
-        int answer = developFuntion.solution(new int[]{1, 1, 9, 1, 1, 1}, 0);
+        int answer = developFuntion
+                .solution(new String[][]{{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}});
 
         System.out.println("answer : " + answer);
 
