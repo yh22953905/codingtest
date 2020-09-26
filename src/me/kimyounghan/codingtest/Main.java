@@ -1,16 +1,15 @@
 package me.kimyounghan.codingtest;
 
 
-import me.kimyounghan.codingtest.codility.kakao.Problem4;
-import me.kimyounghan.codingtest.programmers.hash.PhoneBook;
+import me.kimyounghan.codingtest.programmers.stackandqueue.DevelopFuntion;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        PhoneBook phoneBook = new PhoneBook();
+        DevelopFuntion developFuntion = new DevelopFuntion();
 
-        boolean answer = phoneBook.solution(new String[]{"12","123","1235","567","88"});
+        int[] answer = developFuntion.solution(new int[]{80, 90, 0}, new int[]{1, 3, 30});
 
         System.out.println("answer : " + answer);
 
