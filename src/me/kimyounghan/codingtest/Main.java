@@ -1,17 +1,16 @@
 package me.kimyounghan.codingtest;
 
 
-import me.kimyounghan.codingtest.programmers.hash.BestAlbum;
+import me.kimyounghan.codingtest.programmers.fullSearch.Carpet;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        BestAlbum bestAlbum = new BestAlbum();
+        Carpet carpet = new Carpet();
 
-        int[] answer = bestAlbum
-                .solution(new String[]{"classic", "pop", "classic", "rock", "rock", "classic", "pop", "pop", "pop"}, new int[]{2,2,2,2,2,2,2,2,2});
-
+        int[] answer = carpet
+                .solution(10, 2);
         System.out.println("answer : " + answer);
 
     }
