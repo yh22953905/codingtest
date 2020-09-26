@@ -1,16 +1,16 @@
 package me.kimyounghan.codingtest;
 
 
-import me.kimyounghan.codingtest.programmers.hash.Camouflage;
+import me.kimyounghan.codingtest.programmers.hash.BestAlbum;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Camouflage developFuntion = new Camouflage();
+        BestAlbum bestAlbum = new BestAlbum();
 
-        int answer = developFuntion
-                .solution(new String[][]{{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}});
+        int[] answer = bestAlbum
+                .solution(new String[]{"classic", "pop", "classic", "rock", "rock", "classic", "pop", "pop", "pop"}, new int[]{2,2,2,2,2,2,2,2,2});
 
         System.out.println("answer : " + answer);
 
