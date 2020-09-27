@@ -1,16 +1,16 @@
 package me.kimyounghan.codingtest;
 
 
-import me.kimyounghan.codingtest.programmers.fullSearch.Carpet;
+import me.kimyounghan.codingtest.programmers.binarysearch.Immigration;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Carpet carpet = new Carpet();
+        Immigration immigration = new Immigration();
 
-        int[] answer = carpet
-                .solution(10, 2);
+        long answer = immigration.solution(6, new int[]{7, 10});
+
         System.out.println("answer : " + answer);
 
     }
