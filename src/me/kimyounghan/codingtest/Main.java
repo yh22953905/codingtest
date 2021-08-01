@@ -1,15 +1,13 @@
 package me.kimyounghan.codingtest;
 
-
-import me.kimyounghan.codingtest.programmers.heap.DiskController;
-import me.kimyounghan.codingtest.programmers.heap.MoreSpicy;
+import me.kimyounghan.codingtest.programmers.greedy.JoyStick;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        DiskController diskController = new DiskController();
-        int solution = diskController.solution(new int[][]{{0, 3}, {1, 9}, {2, 6}});
+        JoyStick joyStick = new JoyStick();
+        int solution = joyStick.solution("JAZ");
 
         System.out.println("answer : " + solution);
 
