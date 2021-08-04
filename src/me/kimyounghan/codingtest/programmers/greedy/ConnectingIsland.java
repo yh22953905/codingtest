@@ -1,11 +1,12 @@
 package me.kimyounghan.codingtest.programmers.greedy;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class LifeBoat {
+public class ConnectingIsland {
 
 	/**
 	 * Programmers > 탐욕법 > 구명보트
@@ -29,70 +30,41 @@ public class LifeBoat {
 	 *
 	 * ------------------------------------------------------------------------------------
 	 *
-	 * @param people, limit
+	 * @param n, costs
 	 * @return
 	 */
 
-	public int solution(int[] people, int limit) {
-		AtomicInteger answer = new AtomicInteger();
-
-		// 사람들의 몸무게별 맵
-		Map<Integer, Integer> peopleMap = new HashMap<>();
-
-		for (int i = 0; i < people.length; i++) {
-			Integer weight = Integer.valueOf(people[i]);
-			if (peopleMap.containsKey(weight)) {
-				peopleMap.put(weight, peopleMap.get(weight) + 1);
-			} else {
-				peopleMap.put(weight, 1);
-			}
-		}
-
-		// 사람의 몸무게가 70이면, 먼저 나머지 사람들 중 몸무게 30인 사람을 찾고 1씩 감소시키며 찾음.
-		for (Map.Entry<Integer, Integer> entry : peopleMap.entrySet()) {
-			Integer weight = entry.getKey();
-			int otherWeight = limit - weight;
-			while (entry.getValue() > 0) {
-				if (peopleMap.containsKey(otherWeight)) {
-					peopleMap.put(weight, peopleMap.get(weight) - 1);
-					peopleMap.put(otherWeight, peopleMap.get(otherWeight) - 1);
-
-					answer.getAndIncrement();
-				} else {
-					otherWeight--;
-				}
-
-				if (otherWeight == 0) {
-					answer.getAndIncrement();
-					entry.setValue(entry.getValue() - 1);
-				}
-			}
-		}
-
-		return answer.get();
-	}
-
-	public int solution2(int[] people, int limit) {
+	public int solution(int n, int[][] costs) {
 		int answer = 0;
-		int min = 0;
 
-		// 배열 정렬
-		Arrays.sort(people);
+		// costs[i][2]의 오름차순으로 정렬
+		Arrays.sort(costs, Comparator.comparingInt(o -> o[2]));
 
-		// 최대 몸무게와 최소 몸무게를 더했을 때 limit 를 넘는다면 다음 최대 몸무게로
-		// 즉, 위의 합이 limit 를 넘는 최대 몸무게를 가진 사람은 혼자 태움 (네 번째 제한사항으로 인해 가능)
-		// 합이 limit 를 넘지 않는 몸무게를 가진 사람들은 같이 태움
-		for (int max = people.length - 1; min <= max; max--) {
-			if (people[min] + people[max] <= limit) min++;
-			answer++;
+		// costs 를 탐색하며 섬을 연결할 수 있는지 확인 (네 번째 조건으로 인해 차례 대로 탐색할 수 있음)
+		// 탐색하며 합한 금액이 answer
+		Map<Integer, Integer> islandMap = new HashMap<>();
+
+		for (int i = 0; i < n; i++) {
+			islandMap.put(i, 0);
+		}
+
+		for (int i = 0; i < costs.length; i++) {
+			islandMap.put(costs[i][0], 1);
+			islandMap.put(costs[i][1], 1);
+
+			answer = answer + costs[i][2];
+
+			if (!islandMap.containsValue(0)) {
+				break;
+			}
 		}
 
 		return answer;
 	}
 
 	public static void main(String[] args) {
-		LifeBoat lifeBoat = new LifeBoat();
-		int solution = lifeBoat.solution2(new int[] {70, 50, 80, 50}, 100);
+		ConnectingIsland connectingIsland = new ConnectingIsland();
+		int solution = connectingIsland.solution(4, new int[][] {{0,1,1}, {0,2,2}, {1,2,5}, {1,3,1}, {2,3,8}});
 
 		System.out.println("answer : " + solution);
 	}
